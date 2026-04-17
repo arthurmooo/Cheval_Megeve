@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "motion/react";
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const baseUrl = import.meta.env.BASE_URL;
 
   const navLinks = [
     { name: "Accueil", path: "/" },
@@ -19,10 +20,20 @@ export function Navbar() {
     <header className="sticky top-0 inset-x-0 z-50 bg-paper border-b border-border h-[70px] flex items-center">
       <div className="w-full max-w-7xl mx-auto px-10 flex justify-between items-center">
         {/* LOGO AREA */}
-        <Link to="/" className="group flex items-center">
-          <span className="font-serif text-[20px] font-bold tracking-[1px] text-ink uppercase">
-            CMMM
-          </span>
+        <Link to="/" className="group flex items-center gap-3 min-w-0">
+          <img
+            src={`${baseUrl}images/logo-cmma.jpg`}
+            alt="Logo CMMA"
+            className="h-11 w-11 rounded-full border border-border object-cover"
+          />
+          <div className="hidden sm:block">
+            <div className="font-serif text-[18px] font-bold tracking-[1px] text-ink uppercase leading-none">
+              CMMA
+            </div>
+            <div className="font-sans text-[10px] uppercase tracking-[1.6px] text-muted mt-1">
+              Cheval de Megeve & Mulet des Alpes
+            </div>
+          </div>
         </Link>
 
         {/* DESKTOP NAV */}
@@ -57,7 +68,14 @@ export function Navbar() {
             className="fixed inset-0 z-50 bg-paper px-10 py-12 flex flex-col border-b border-border"
           >
             <div className="flex justify-between items-center mb-12">
-              <span className="font-serif text-[20px] font-bold tracking-[1px] text-ink uppercase">CMMM</span>
+              <div className="flex items-center gap-3">
+                <img
+                  src={`${baseUrl}images/logo-cmma.jpg`}
+                  alt="Logo CMMA"
+                  className="h-12 w-12 rounded-full border border-border object-cover"
+                />
+                <span className="font-serif text-[20px] font-bold tracking-[1px] text-ink uppercase">CMMA</span>
+              </div>
               <button onClick={() => setIsMobileMenuOpen(false)}>
                 <X className="w-8 h-8 text-ink" />
               </button>

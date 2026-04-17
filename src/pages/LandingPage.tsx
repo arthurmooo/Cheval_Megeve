@@ -3,6 +3,8 @@ import { ShieldCheck } from "lucide-react";
 import { Link } from "react-router-dom";
 
 export function LandingPage() {
+  const baseUrl = import.meta.env.BASE_URL;
+
   return (
     <div className="w-full flex-grow flex flex-col bg-paper">
       
@@ -12,15 +14,22 @@ export function LandingPage() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-black/20 to-black/50 z-10" />
           <img
-            src="https://images.unsplash.com/photo-1553284965-83fd3e82fa5a?auto=format&fit=crop&q=80&w=1920"
-            alt="Cheval de Megève et Mulet des Alpes dans un paysage alpin"
+            src={`${baseUrl}images/presentation-officielle.jpg`}
+            alt="Présentation officielle du Cheval de Megève et du Mulet des Alpes"
             className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
           />
         </div>
 
         {/* Hero Content */}
         <div className="relative z-20 px-[40px] max-w-4xl mx-auto flex flex-col items-center">
+          <motion.img
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            src={`${baseUrl}images/logo-cmma.jpg`}
+            alt="Logo CMMA"
+            className="h-[84px] w-[84px] rounded-full border border-white/40 shadow-xl object-cover mb-[18px]"
+          />
           <motion.h1
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -69,10 +78,9 @@ export function LandingPage() {
           >
             <div className="h-[280px] lg:h-[320px] border-b border-border overflow-hidden">
               <img 
-                src="https://picsum.photos/seed/cheval-megeve-prestige/800/600" 
+                src={`${baseUrl}images/cheval-megeve.jpg`}
                 alt="Cheval de Megève" 
                 className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
-                referrerPolicy="no-referrer"
               />
             </div>
             <div className="p-[40px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-grow bg-paper relative">
@@ -99,10 +107,9 @@ export function LandingPage() {
           >
             <div className="h-[280px] lg:h-[320px] border-b border-border overflow-hidden">
               <img 
-                src="https://picsum.photos/seed/mulet-alpes-ecolo/800/600" 
-                alt="Mulet des Alpes" 
+                src={`${baseUrl}images/activite-famille.jpg`}
+                alt="Cheval de trait en activité avec une famille à Megève" 
                 className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
-                referrerPolicy="no-referrer"
               />
             </div>
             <div className="p-[40px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-grow bg-paper relative">
