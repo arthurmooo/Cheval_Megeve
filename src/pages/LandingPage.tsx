@@ -78,9 +78,9 @@ export function LandingPage() {
           >
             <div className="h-[280px] lg:h-[320px] border-b border-border overflow-hidden">
               <img 
-                src={`${baseUrl}images/cheval-megeve.jpg`}
-                alt="Cheval de Megève" 
-                className="w-full h-full object-cover grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                src={`${baseUrl}images/randonnee-megeve.webp`}
+                alt="Randonnée à cheval à Megève" 
+                className="w-full h-full object-cover object-center grayscale-[20%] group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
               />
             </div>
             <div className="p-[40px] flex flex-col justify-center items-center lg:items-start text-center lg:text-left flex-grow bg-paper relative">
